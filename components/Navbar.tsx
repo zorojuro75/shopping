@@ -58,7 +58,7 @@ const Navbar = (props: Props) => {
             </>
           ) : (
             <>
-              <Link href={"/"} className="border-r px-2">
+              <Link href={"/login"} className="border-r px-2">
                 Log in
               </Link>
               <Link href={"/signin"}>Sign up</Link>

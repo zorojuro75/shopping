@@ -22,7 +22,7 @@ const page = (props: Props) => {
   const handleSubmit = async (e:any) => {
     try {
       console.log('not Hello')
-      const response = await fetch("http://localhost:8000/api/register", {
+      const response = await fetch("http://localhost:8000/api/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -31,7 +31,10 @@ const page = (props: Props) => {
         body: JSON.stringify(formData),
       });
       if (response.ok) {
+        let res = await response.json();
+        localStorage.setItem("user", JSON.stringify(res));
         console.log("User registered successfully");
+        router.push('/');
       } else {
         console.error("Registration failed");
       }

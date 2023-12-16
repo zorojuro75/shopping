@@ -10,16 +10,21 @@ const Navbar = (props: Props) => {
   const [expand, setExpand] = useState(false);
   const [user, setUser] = useState<any>();
   useEffect(() => {
-    const storedUser = localStorage.getItem("user");
+      const storedUser = localStorage.getItem("user");
 
-    if (storedUser) {
-      const parsedUser = JSON.parse(storedUser);
-      setUser(parsedUser);
-      setLoggedIn(true);
-    } else {
-      setLoggedIn(false);
-    }
-  }, []);
+      if (storedUser) {
+        const parsedUser = JSON.parse(storedUser);
+        setUser(parsedUser);
+        setLoggedIn(true);
+      } else {
+        setLoggedIn(false);
+      }
+    
+  }, [logout]);
+  function logout(){
+    localStorage.clear()
+    expanded()
+  }
   function expanded() {
     setExpand(!expand);
     console.log(user);
@@ -48,7 +53,7 @@ const Navbar = (props: Props) => {
               </button>
               {expand ? <div className="absolute z-50 bg-white top-[55px] right-10 text-lg flex flex-col items-center p-5 border rounded-sm">
               {user?.userName}
-              <button className="border-t" onClick={expanded}>Log Out</button>
+              <button className="border-t" onClick={logout}>Log Out</button>
               </div> : <></>}
             </>
           ) : (

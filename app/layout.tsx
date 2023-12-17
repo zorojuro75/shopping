@@ -18,7 +18,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`bg-black bg-opacity-5 flex flex-col h-[100vh] ${inter.className}`}>
-        <Navbar/>
         {children}
         </body>
     </html>

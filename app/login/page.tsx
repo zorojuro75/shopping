@@ -47,7 +47,6 @@ const page = (props: Props) => {
 
   return (
     <>
-      <Navbar />
       <div className="md:max-w-7xl mx-auto flex-1 flex flex-col justify-center">
         <form
           action={handleSubmit}

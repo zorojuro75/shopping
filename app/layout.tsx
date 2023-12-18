@@ -1,25 +1,28 @@
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import './globals.css'
-import Navbar from '../components/Navbar'
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "./globals.css";
+import Navbar from "../components/Navbar";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Shopping.com',
-  description: '',
-}
+  title: "Shopping.com",
+  description: "",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
-      <body className={`bg-black bg-opacity-5 flex flex-col h-[100vh] ${inter.className}`}>
+      <body
+        className={`bg-black bg-opacity-5 flex flex-col h-[100vh] ${inter.className}`}
+      >
+        <Navbar />
         {children}
-        </body>
+      </body>
     </html>
-  )
+  );
 }

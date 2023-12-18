@@ -1,5 +1,4 @@
 "use client";
-import exp from "constants";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { CiLogin, CiMenuBurger, CiSearch } from "react-icons/ci";
@@ -30,7 +29,7 @@ const Navbar = (props: Props) => {
   }
   return (
     <div className="bg-white shadow-lg p-5 flex justify-between items-center md:block">
-      <div className="flex justify-between items-center text-2xl md:text-4xl md:max-w-7xl md:mx-auto">
+      <div className="grid grid-cols-3 text-2xl md:text-4xl md:max-w-7xl md:mx-auto place-items-center">
         <Link href={"/"} className="text-purple-500 font-semibold">
           Shopping
         </Link>
@@ -44,12 +43,23 @@ const Navbar = (props: Props) => {
           <Link href={"/"}>Kid&apos;s</Link>
         </div>
         <div className="text-xl hidden md:flex gap-2">
-        <CiSearch className="text-2xl"/>
+          <div className="group relative flex transform">
+            <input
+              type="text"
+              placeholder="Search"
+              className="border rounded-xl px-2 w-0 transition duration-[1000ms] ease-in text-sm bg-none outline-none hidden searchInput group-hover:block text-black group-hover:w-48"
+            />
+
+            <button className="float-right rounded-full flex justify-center items-center transition duration-400  searchButton">
+              <CiSearch className="text-2xl" />
+            </button>
+          </div>
+
           {loggedIn ? (
             <>
-              <FaCartPlus className="text-2xl mr-2" />
+              <FaCartPlus className="text-2xl mx-4" />
               <button onClick={expanded}>
-                <FaUserCircle className="text-2xl ml-2" />
+                <FaUserCircle className="text-2xl" />
               </button>
               {expand ? (
                 <div className="absolute z-50 bg-white top-[55px] right-10 text-lg flex flex-col items-center p-5 border rounded-sm">

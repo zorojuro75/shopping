@@ -14,9 +14,10 @@ const page = (props: Props) => {
   });
   useEffect(() => {
     if (localStorage.getItem("user")) {
+      console.log(localStorage.getItem('user'))
       router.push("/");
     }
-  }, []);
+  },[]);
   const handleChange = (e: { target: { name: any; value: any } }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };

@@ -1,1 +1,1 @@
-### E-Commerce App with Laravel backend and Nextjs frontend
+# E-Commerce App with Laravel backend and Nextjs frontend

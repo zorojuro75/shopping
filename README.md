@@ -15,3 +15,12 @@
 
 ### Without login:
 ![alt text](Images/withoutLogin.jpeg)
+
+### Login Page:
+![alt text](Images/login.jpeg)
+
+### Signup Page:
+![alt text](Images/signup.jpeg)
+
+### Landing Page after login:
+![alt text](Images/afterlogin.jpeg)

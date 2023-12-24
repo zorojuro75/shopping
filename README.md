@@ -14,4 +14,4 @@
 ## Visuals of the shopping app:
 
 ### Without login:
-![alt text](https://github.com/zorojuro75/shopping/blob/main/Images/image.jpg?raw=true)
+![alt text](Images/withoutLogin.jpeg)
